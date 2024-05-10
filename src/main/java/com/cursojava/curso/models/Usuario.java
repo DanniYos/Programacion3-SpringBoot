@@ -22,7 +22,9 @@ public class Usuario {
     @Getter @Setter @Column(name = "apellido")
     private String apellido;
 
-    @Getter @Setter @Column(name = "email")
+    @Getter
+    @Setter
+    @Column(name = "email", unique = true)
     private String email;
 
     @Getter @Setter @Column(name = "telefono")

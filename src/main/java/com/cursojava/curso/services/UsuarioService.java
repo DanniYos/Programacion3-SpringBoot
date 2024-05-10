@@ -1,12 +1,13 @@
-package com.cursojava.curso.dao;
+package com.cursojava.curso.services;
 
 import com.cursojava.curso.models.Usuario;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface UsuarioDao {
 
+
+
+public interface UsuarioService {
     List<Usuario> getUsuarios();
 
     void eliminar(Long id);
