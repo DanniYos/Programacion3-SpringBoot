@@ -1,6 +1,6 @@
 package com.cursojava.curso.services;
 
-import com.cursojava.curso.dao.UsuarioDao;
+import com.cursojava.curso.dao.UsuarioRepository;
 import com.cursojava.curso.models.Usuario;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
@@ -13,26 +13,26 @@ import java.util.List;
 public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
-    private UsuarioDao usuarioDao;
+    private UsuarioRepository usuarioDao;
 
     @Override
     public List<Usuario> getUsuarios() {
-        return usuarioDao.getUsuarios();
+        return usuarioDao.findAll();
     }
 
     @Override
     public void eliminar(Long id) {
-        usuarioDao.eliminar(id);
+        usuarioDao.deleteById(id);
     }
 
     @Override
     public void registrar(Usuario usuario) {
-        usuarioDao.registrar(usuario);
+        usuarioDao.save(usuario);
     }
 
     @Override
     public Usuario obtenerUsuarioPorCredenciales(Usuario usuario) {
-        Usuario user = usuarioDao.obtenerUsuarioPorCredenciales(usuario);
+        Usuario user = usuarioDao.obtenerUsuarioPorCredenciales(usuario.getEmail());
 
         String passwordHashed = user.getPassword();
 

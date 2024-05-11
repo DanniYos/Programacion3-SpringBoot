@@ -1,6 +1,5 @@
 package com.cursojava.curso.controllers;
 
-import com.cursojava.curso.dao.UsuarioDao;
 import com.cursojava.curso.models.Usuario;
 import com.cursojava.curso.services.UsuarioService;
 import com.cursojava.curso.utils.JWTUtil;
@@ -9,7 +8,6 @@ import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
