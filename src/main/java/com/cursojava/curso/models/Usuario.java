@@ -10,7 +10,6 @@ import lombok.ToString;
 @Table(name = "usuarios")
 @ToString @EqualsAndHashCode
 public class Usuario {
-
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Getter @Setter @Column(name = "id")
